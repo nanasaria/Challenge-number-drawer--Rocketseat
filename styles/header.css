@@ -1,0 +1,13 @@
+header {
+  padding-top: 4.75rem;
+  padding-left: 23.5rem;
+}
+
+@media (width < 1000px) {
+  header {
+    margin-top: 2.75rem;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+}

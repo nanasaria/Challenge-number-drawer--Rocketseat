@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Numbers</title>
+  </head>
+  <body>
+    <header class="flex row">
+      <img src="assets/icon/logo.svg" alt="" />
+    </header>
+
+    <main class="flex row">
+      <aside>
+        <p class="overline">Online - gratuito</p>
+        <h1 class="wrap">Sorteador <br />de números</h1>
+
+        <div class="cards-info flex column">
+          <div class="card-info flex column">
+            <p class="info-title">
+              <img src="assets/icon/people-purple.svg" alt="" />
+              Como funciona o sorteador de números?
+            </p>
+            <p class="info-text">
+              O sorteador utiliza um algoritmo de geração aleatória para criar
+              números dentro do intervalo especificado pelo usuário.
+            </p>
+          </div>
+
+          <div class="card-info-second flex column">
+            <p class="info-title">
+              <img src="assets/icon/people-purple.svg" alt="" />
+              Posso escolher o intervalo dos números?
+            </p>
+            <p class="info-text">
+              Sim, você pode definir os valores mínimo e máximo para o intervalo
+              dos números sorteados.
+            </p>
+          </div>
+        </div>
+      </aside>
+
+      <div id="drawer" class="card-right flex column">
+        <h2>Quero sortear:</h2>
+        <p>
+          defina o intervalo e a quantidade de números, clique em "Sortear" e
+          veja os resultados na tela. É rápido e fácil!
+        </p>
+
+        <form class="flex column">
+          <div id="numbers" class="flex row">
+            <label for="number" id="numberLabel" class="flex column"
+              >números
+              <input type="text" id="number" name="number" />
+            </label>
+
+            <label
+              for="initial-range"
+              id="initialRangeLabel"
+              class="flex column"
+              >de
+              <input type="text" id="initial-range" name="initial-range" />
+            </label>
+
+            <label for="end-range" id="endRangeLabel" class="flex column"
+              >de
+              <input type="text" id="end-range" name="end-range" />
+            </label>
+          </div>
+
+          <div id="repeat-number" class="repeat-number flex row">
+            <button id="dont-repeat-number">
+              <img
+                id="circle-dont-repeat"
+                class="flex row"
+                src="assets/icon/circle.svg"
+                alt=""
+              />
+            </button>
+            <p>Não repetir número</p>
+          </div>
+
+          <button class="submit flex row">
+            Sortear <img id="arrow" src="assets/icon/arrow.svg" alt="" />
+          </button>
+        </form>
+      </div>
+
+      <div id="result-drawer" class="card-right flex column">
+        <div id="header-result" class="flex column">
+          <h2>Resultado do sorteio</h2>
+          <p class="overline">1º resultado</p>
+        </div>
+
+        <form class="flex column">
+          <div id="number-results" class="flex row">
+            <div class="card-number flex row">
+              <div class="card-show"></div>
+              <h2 class="number">32</h2>
+            </div>
+
+            <div class="card-number flex row">
+              <div class="card-show"></div>
+              <h2 class="number">12</h2>
+            </div>
+          </div>
+
+          <button id="drawer-again" class="submit flex row">
+            Sortear novamente
+
+            <div class="icon-repeat">
+              <img id="play" src="assets/icon/play.svg" alt="" />
+              <img id="repeat" src="assets/icon/circunference.svg" alt="" />
+            </div>
+          </button>
+        </form>
+      </div>
+    </main>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
