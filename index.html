@@ -48,7 +48,7 @@
           veja os resultados na tela. É rápido e fácil!
         </p>
 
-        <form class="flex column">
+        <form id="drawer-form" class="flex column">
           <div id="numbers" class="flex row">
             <label for="number" id="numberLabel" class="flex column"
               >números
@@ -81,30 +81,20 @@
             <p>Não repetir número</p>
           </div>
 
-          <button class="submit flex row">
+          <button id="btn-drawer" class="submit flex row">
             Sortear <img id="arrow" src="assets/icon/arrow.svg" alt="" />
           </button>
         </form>
       </div>
 
-      <div id="result-drawer" class="card-right flex column">
+      <div id="result-drawer" class="card-right hide column">
         <div id="header-result" class="flex column">
           <h2>Resultado do sorteio</h2>
-          <p class="overline">1º resultado</p>
+          <p id="quant-result" class="overline">Resultado</p>
         </div>
 
-        <form class="flex column">
-          <div id="number-results" class="flex row">
-            <div class="card-number flex row">
-              <div class="card-show"></div>
-              <h2 class="number">32</h2>
-            </div>
-
-            <div class="card-number flex row">
-              <div class="card-show"></div>
-              <h2 class="number">12</h2>
-            </div>
-          </div>
+        <form id="result-form" class="flex column">
+          <div id="number-results" class="flex row wrap"></div>
 
           <button id="drawer-again" class="submit flex row">
             Sortear novamente

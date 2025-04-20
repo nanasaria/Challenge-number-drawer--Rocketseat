@@ -55,7 +55,7 @@ main {
   }
 
   #drawer {
-    display: none;
+    display: flex;
   }
 
   .card-right {
@@ -112,7 +112,7 @@ main {
         border-radius: 0.5rem;
         outline: none;
         background-clip: border-box;
-        transition: background 0.2s, border 0.2s;
+        transition: background 0.3s, border 0.3s;
         position: relative;
         z-index: 1;
       }
@@ -257,7 +257,7 @@ main {
     }
 
     .submit:hover #arrow {
-      animation: bounce-forward-back 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      animation: bounce-forward-back 0.7s cubic-bezier(0.22, 1, 0.36, 1);
       will-change: transform;
     }
   }
@@ -265,7 +265,6 @@ main {
   #result-drawer {
     padding-block: 3.69rem;
     width: 30.125rem;
-    display: flex;
 
     #header-result {
       justify-content: center;
@@ -306,7 +305,8 @@ main {
     #number-results {
       justify-content: center;
       align-items: center;
-      height: 9rem;
+      height: auto;
+      overflow-y: auto;
       gap: 0.5rem;
       padding-top: 2.5rem;
       overflow: hidden;
@@ -353,11 +353,11 @@ main {
     }
 
     .number.animate {
-      animation: textAppear 2.5s ease-out forwards;
+      animation: textAppear 3.5s ease-out forwards;
     }
 
     .number.animate-primary {
-      animation: textAppear-primary 2.5s ease-out forwards;
+      animation: textAppear-primary 3.5s ease-out forwards;
     }
   }
 }
@@ -501,16 +501,20 @@ main {
   }
 
   40% {
+    opacity: 0;
+  }
+
+  41%,
+  50%,
+  80% {
     opacity: 1;
     color: var(--background-primary);
+    transform: translateX(0);
   }
 
-  60% {
-    color: var(--content-brand);
-  }
-
-  95% {
-    transform: translateX(6px);
+  82%,
+  94% {
+    transform: translateX(16px);
   }
 
   100% {
@@ -522,22 +526,24 @@ main {
 @keyframes textAppear {
   0% {
     opacity: 0;
-    transform: scale(0.8);
     color: var(--background-primary);
   }
 
-  30% {
+  40% {
+    opacity: 0;
+  }
+
+  41%,
+  50%,
+  80% {
     opacity: 1;
     color: var(--background-primary);
+    transform: translateX(0);
   }
 
-  70% {
-    opacity: 1;
-    color: var(--content-brand);
-  }
-
-  95% {
-    transform: translateX(3px);
+  82%,
+  94% {
+    transform: translateX(5px);
   }
 
   100% {
@@ -550,22 +556,27 @@ main {
   0% {
     opacity: 0;
     transform: rotate(0);
-    transform: scale(0.5);
+    transform: scale(0.4);
   }
 
-  40% {
+  30% {
     opacity: 1;
-    transform: scale(0.9);
-    transform: rotate(360deg);
+    transform: scale(1);
   }
 
-  80% {
-    background-color: var(--content-brand);
+  50%,
+  89% {
+    transform: rotate(180deg);
+  }
+
+  90%,
+  92% {
+    transform: scale(0.9);
   }
 
   100% {
+    transform: scale(0);
     opacity: 1;
-    background-color: transparent;
   }
 }
 
@@ -671,4 +682,12 @@ main {
       width: 19.9375rem;
     }
   }
+}
+
+.hide {
+  display: none !important;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }
